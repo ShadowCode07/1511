@@ -5,8 +5,7 @@ Hello and welcom to our game "MathTricks"!
 ## 🖥️ About
 <p align = "center">
 Our team's name is 1511 and here's how you can play our game:
-//how to run the game
-To tun the ganme you need to 
+To tun the ganme you need to debug it in visual studio but launching the .sln file
 Once you've opened the game you need to input the size of the game board, which has to be between 4 and 9.
 Now you can play the game!
 You can move the character by clicking on the desired cell.
