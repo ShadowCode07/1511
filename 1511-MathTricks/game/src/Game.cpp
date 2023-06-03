@@ -28,12 +28,27 @@ void Game::Tick()
 
 void Game::Update()
 {
+	static bool setup = false;
+
+	if (menu.startGame == true)
+	{
+		Board& board = Board::getInstance();
+
+		if (setup == false)
+		{
+			board.setBoardHeight(menu.inputHeight);
+			board.setBoardWidth(menu.inputWidth);
+			board.setup();
+			setup = true;
+		}
+
+		board.HandleMovement();
+	}
 }
 
 void Game::Draw()
 {
 	ClearBackground(BLACK);
-	static bool setup = false;
 
 	if (menu.startGame == 0)
 	{
@@ -42,13 +57,6 @@ void Game::Draw()
 	else
 	{
 		Board& board = Board::getInstance();
-		if(setup == false)
-		{ 
-			board.setBoardHeight(menu.inputHeight);
-			board.setBoardWidth(menu.inputWidth);
-			board.setup();
-			setup = true;
-		}
 
 		board.DrawBoard();
 	}

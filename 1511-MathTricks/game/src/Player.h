@@ -1,23 +1,16 @@
 #pragma once
 #include <string>
 #include <raylib.h>
-#include <Board.h>
 
 class Player
 {
 public:
-	Player(std::string texture);
-	~Player();
+	Player(int startingPosition, Color color, int own);
 	
-	void drawPlayer();
-	void PlayerMove();
-private:
-	std::string Name = " ";
-	bool lost = false;
-	Texture2D sprite;
+	void drawPlayer(int x, int y, Color a);
 	
-
+	Color color = BLUE;
+	int currentPosition = 0;
+	int own;
+	float score = 0;
 };
-
-//Player player1();
-//Player player2;

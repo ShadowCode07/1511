@@ -1,20 +1,18 @@
 #include <Player.h>
 
-Player::Player(std::string texture)
+Player::Player(int startingPosition, Color color, int own)
+	:
+	currentPosition(startingPosition),
+	color(color),
+	own(own)
 {
-	sprite = LoadTexture(texture.c_str());
+	//sprite = LoadTexture(texture.c_str());
 }
 
-Player::~Player()
-{
-	UnloadTexture(sprite);
-}
 
-void Player::drawPlayer()
+void Player::drawPlayer(int x, int y, Color a)
 {
-}
-
-void Player::PlayerMove()
-{
-
+	DrawRectangle(x, y, 65, 65, color);
+	DrawRectangleLines(x, y, 65, 65, WHITE);
+	DrawText("O", x+10, y+10, 40, a);
 }
